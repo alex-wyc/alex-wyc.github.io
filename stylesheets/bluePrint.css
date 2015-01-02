@@ -74,7 +74,7 @@ div.sidebar {
 	float: left;
 	color: white;
 	text-align: center;
-	width: 200px;
+	width: 180px;
 
 	margin: 0px 0px 0px 30px;
 
@@ -96,7 +96,7 @@ div.sidebar li {
 	text-align: center;
 	margin: 5px 0px;
 	position: relative;
-	left: -43px;
+	left: -20px;
 }
 
 div.sidebar li:hover {
@@ -110,7 +110,7 @@ div.main {
 	color: white;
 	width: 77%;
 	
-	margin: 90px 0px 0px 200px;
+	margin: 90px 0px 0px 220px;
 
 	border: 10px groove DarkBlue;
 }
