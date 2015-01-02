@@ -17,6 +17,7 @@ div.header {
 }
 
 div.sidebar {
+	float: top;
 	background-color: DeepSkyBlue;
 	color: blue;
 	text-align: center;
