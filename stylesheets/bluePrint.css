@@ -19,12 +19,22 @@ div.main a:link {
 	text-decoration: none;
 }
 
-a:hover {
+div.sidebar a:hover {
 	color: red;
 	text-decoration: underline;
 }
 
-a:visited {
+div.main a:hover{
+	color: red;
+	text-decoration: underline;
+}
+
+div.sidebar a:visited {
+	color: green;
+	text-decoration: none;
+}
+
+div.main a:visited {
 	color: green;
 	text-decoration: none;
 }
