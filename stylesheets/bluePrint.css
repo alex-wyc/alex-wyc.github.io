@@ -1,4 +1,6 @@
-body {
+html, body {
+	margin: 0;
+	padding: 0;
 	background-image: url("../images/blueprint.jpg");
 	background-repeat: repeat-xy;
 }
@@ -17,7 +19,7 @@ div.header {
 }
 
 div.sidebar {
-	float: top;
+	float: left;
 	background-color: DeepSkyBlue;
 	color: blue;
 	text-align: center;
@@ -40,7 +42,7 @@ div.sidebar li {
 }
 
 div.main {
-	float: top;
+	float: right;
 	color: white;
 
 	margin: 15px 30px 0px 200px;
