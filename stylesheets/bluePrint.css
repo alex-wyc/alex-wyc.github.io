@@ -1,8 +1,14 @@
+@font-face {
+	font-family: "Squared Display";
+	src: url("/font/Squared Display.ttf") format("truetype");
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
 	background-image: url("../images/blueprint.jpg");
 	background-repeat: repeat-xy;
+	font-family: "Squared Display"
 }
 
 h1, h2, h3, h4 {
