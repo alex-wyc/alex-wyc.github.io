@@ -10,18 +10,22 @@ h1, h2, h3, h4 {
 }
 
 div.header {
-	background-color: #FFFFFF;
+	background-color: DarkBlue;
 	text-align: center;
 	color: blue;
-	height: 50px;
+	height: 65px;
 
-	margin: 0px 0px 15px;
+	position: fixed;
+	top: -0px;
+
+	width: 100%;
+
+	margin: 0px 0px 5px;
 }
 
 div.sidebar {
 	float: left;
-	background-color: DeepSkyBlue;
-	color: blue;
+	color: white;
 	text-align: center;
 	width: 150px;
 
@@ -33,6 +37,7 @@ div.sidebar {
 div.sidebar ul {
 	list-style-type: none;
 	margin: 0px 15px;
+	color: blue;
 }
 
 div.sidebar li {
@@ -43,13 +48,15 @@ div.sidebar li {
 	vertical-align: middle;
 	text-align: center;
 	margin: 5px 0px;
+	position: relative;
+	left: -43px;
 }
 
 div.main {
 	color: white;
 	width: 77%;
 	
-	margin: 0px 0px 0px 200px;
+	margin: 90px 0px 0px 200px;
 
 	border: 10px groove DarkBlue;
 }
