@@ -38,7 +38,6 @@ div.sidebar ul {
 div.sidebar li {
 	width: 120px;
 	float: left;
-	display: block;
 	background-color: LightSkyBlue;
 	border: 5px ridge ForestGreen;
 	margin: 5px;
