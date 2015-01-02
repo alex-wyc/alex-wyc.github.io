@@ -15,7 +15,7 @@ div.sidebar a:link {
 }
 
 div.main a:link {
-	color: gray;
+	color: GreenYellow;
 	text-decoration: none;
 }
 
@@ -76,6 +76,8 @@ div.sidebar li:hover {
 	background-color: DeepSkyBlue;
 	transition: .5s;
 	border: 5px groove ForestGreen;
+	color: red;
+	text-decoration: underline;
 }
 
 div.main {
