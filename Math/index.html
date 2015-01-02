@@ -52,7 +52,13 @@
 				<p>No Solution Yet</p>
 			</div>
 
-			<button title="Click to show/hide content" type="button" onclick="if(document.getElementsByClassName('Solution')[0].style.display=='none') {document.getElementsByClassName('Solution')[0].style.display=''}else{document.getElementsByClassName('Solution')[0].style.display='none'}">Show/hide</button><br><br><br>
+			<div class="Hint" style="display:none">
+				<p>Hint: Use Rearrangement</p>
+			</div>
+
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementsByClassName('Solution')[0].style.display=='none') {document.getElementsByClassName('Solution')[0].style.display=''}else{document.getElementsByClassName('Solution')[0].style.display='none'}">Show/hide Solution</button>
+
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementsByClassName('Hint')[0].style.display=='none') {document.getElementsByClassName('Hint')[0].style.display=''}else{document.getElementsByClassName('Hint')[0].style.display='none'}">Show/hide Hint</button>
 		</div>
 	</body>
 </html>
