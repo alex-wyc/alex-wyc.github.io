@@ -18,13 +18,13 @@ div.header {
 
 div.sidebar {
 	background-color: DeepSkyBlue;
-	color: white;
+	color: blue;
 	text-align: center;
 	width: 150px;
 
 	margin: 15px 0px 0px 30px;
 
-	border: 10px groove ForestGreen;
+	border: 10px groove DarkBlue;
 }
 
 div.sidebar ul {
