@@ -36,6 +36,7 @@ div.sidebar ul {
 }
 
 div.sidebar li {
+	float: left;
 	display: block;
 	background-color: LightSkyBlue;
 	border: 5px ridge ForestGreen;
