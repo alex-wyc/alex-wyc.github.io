@@ -35,6 +35,7 @@ div.sidebar ul {
 div.sidebar li {
 	background-color: LightSkyBlue;
 	border: 5px ridge ForestGreen;
+	margin: 5px 0px;
 }
 
 div.main {
