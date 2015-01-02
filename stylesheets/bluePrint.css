@@ -90,8 +90,6 @@ div.sidebar li:hover {
 	background-color: DeepSkyBlue;
 	transition: 1s;
 	border: 5px groove ForestGreen;
-	color: red;
-	text-decoration: underline;
 }
 
 div.main {
