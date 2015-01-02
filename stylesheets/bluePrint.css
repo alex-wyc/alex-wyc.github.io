@@ -1,6 +1,6 @@
 body {
 	background-image: url("../images/blueprint.jpg");
-	background-repeat: repeat-x;
+	background-repeat: repeat-xy;
 }
 
 h1, h2, h3, h4 {
@@ -12,6 +12,10 @@ div.header {
 	text-align: center;
 	color: blue;
 	height: 100px;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	left: 0px;
 }
 
 div.sidebar {
