@@ -9,6 +9,21 @@ h1, h2, h3, h4 {
 	text-align: center;
 }
 
+a:link {
+	color: blue;
+	text-decoration: none;
+}
+
+a:hover {
+	color: red;
+	text-decoration: underline;
+}
+
+a:visited {
+	color: green;
+	text-decoration: none;
+}
+
 div.header {
 	background-color: DarkBlue;
 	text-align: center;
@@ -50,6 +65,12 @@ div.sidebar li {
 	margin: 5px 0px;
 	position: relative;
 	left: -43px;
+}
+
+div.sidebar li:hover {
+	background-color: DeepSkyBlue;
+	transition: .5s;
+	border: 5px groove ForestGreen;
 }
 
 div.main {
