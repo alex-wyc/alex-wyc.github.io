@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Yeech's Personal Website</title>
+		<title>Contest Math Prep</title>
 		
 		<link rel="stylesheet" type="text/css" href="/stylesheets/bluePrint.css">
 		
@@ -48,7 +48,26 @@
 			<p>Problem from "Math Circle for Olympians" by Henryk Pawlowski</p>
 
 			<div class="Solution" style="display:none">
-				<p>No Solution Yet</p>
+				<p><b>Solution:</b></p>
+				<p>WLOG, we can assume that \(x_1 \geq x_2 \geq x_3 \geq ... \geq x_n\). Therefore, we also know that
+				\(\frac{1}{x_n} \geq \frac{1}{x_{n-1}} \geq \frac{1}{x_{n-2}} \geq ... \geq \frac{1}{x_1}\).</p>
+
+				<p>From the rearrangement inequality, we know that the minimum value of any linear combination
+				of these two sequences is when the order of the two sequences completely mismatches. Therefore
+				the minimum value of any linear combination is \(\frac{1}{x_n} \cdot x_n + \frac{1}{x_{n-1}} \cdot x_{n-1} + \frac{1}{x_{n-2}} \cdot x_{n-2} + ...
+				+ \frac{1}{x_2} \cdot x_2 + \frac{1}{x_1} \cdot x_1\), which will give you n.</p>
+
+				<p>Now let's expand the left hand side:
+				\[x_1 \cdot \frac{1}{x_1} + x_2 \cdot \frac{1}{x_2} + ... + x_n \cdot \frac{1}{x_n} +\]
+				\[x_1 \cdot \frac{1}{x_2} + x_2 \cdot \frac{1}{x_3} + ... + x_n \cdot \frac{1}{x_1} +\]
+				\[... ... ... ... ... ... ... ... ... ... ... ...\]
+				\[x_1 \cdot \frac{1}{x_n-1} + x_2 \cdot \frac{1}{x_n} + ... + x_n \cdot \frac{1}{x_{n-2}} +\]
+				\[x_1 \cdot \frac{1}{x_n} + x_2 \cdot \frac{1}{x_1} + ... + x_n \cdot \frac{1}{x_{n-1}}\]
+				</p>
+
+				<p>Now we apply rearrangement to each "row" of the expansion. Notice hat each row is greater than
+				or equal to n, and since there are n rows, their sum is greater than or equal to \(n \times n\), or
+				\(\boxed{n^2}\blacksquare\)
 			</div>
 
 			<div class="Hint" style="display:none">
