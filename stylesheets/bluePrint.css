@@ -29,6 +29,7 @@ div.sidebar {
 
 div.sidebar ul {
 	list-style-type: none;
+	text-align: center;
 }
 
 div.sidebar li {
