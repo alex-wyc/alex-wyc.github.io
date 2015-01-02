@@ -1,6 +1,6 @@
 html, body {
 	margin: 0;
-	padding: 10px;
+	padding: 0;
 	background-image: url("../images/blueprint.jpg");
 	background-repeat: repeat-xy;
 }
@@ -53,6 +53,7 @@ div.sidebar li {
 }
 
 div.main {
+	padding: 15px;
 	color: white;
 	width: 77%;
 	
