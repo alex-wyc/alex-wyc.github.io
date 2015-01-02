@@ -5,9 +5,18 @@
 		
 		<link rel="stylesheet" type="text/css" href="/stylesheets/bluePrint.css">
 		
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
 		<script type="text/javascript"
 		  src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 		</script>
+	
+		<script>
+			$(function() {
+				$(".sidebar").load("/sidebar.html");
+			});
+		</script>
+	
 	</head>
 
 	<body>
@@ -17,21 +26,6 @@
 		</div>
 
 		<div class="sidebar" id="sidebar">
-			<h3>Pages</h3>
-			<ul>
-				<li><a href="/index.html">Home</a></li>
-				<li><a href="/aboutMe.html">About Me</a></li>
-				<li><a href="/Physics/">Physics</a></li>
-				<li><a href="/Math/">Contest Math</a></li>
-				<li><a href="http://81.4.120.231/~whitehats/">White Hat Academy</a></li>
-			</ul>
-			<h3>Projects</h3>
-			<ul>
-				<li>PsiWeb</li>
-				<li>Y.E.S.</li>
-				<li>Gradie.int</li>
-				<li>Janus Chronicle</li>
-			</ul>
 		</div>
 		
 		<div class="main">
