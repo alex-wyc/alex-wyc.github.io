@@ -1,6 +1,6 @@
 @font-face {
-	font-family: "Squared Display";
-	src: url("/font/Squared Display.ttf") format("truetype");
+	font-family: "FragmentCore";
+	src: url("/font/Fragmentcore.otf") format("opentype");
 }
 
 html, body {
@@ -8,7 +8,7 @@ html, body {
 	padding: 0;
 	background-image: url("../images/blueprint.jpg");
 	background-repeat: repeat-xy;
-	font-family: "Squared Display"
+	font-family: "FragmentCore"
 }
 
 h1, h2, h3, h4 {
