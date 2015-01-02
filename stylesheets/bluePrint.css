@@ -20,6 +20,15 @@ div.sidebar {
 	background-color: DeepSkyBlue;
 	color: white;
 	text-align: center;
+	width: 150px;
+
+	margin: 15px 0px 0px 30px;
+
+	border: 10px groove ForestGreen;
+}
+
+div.sidebar ul {
+	list-style-type: none;
 }
 
 div.sidebar li {
