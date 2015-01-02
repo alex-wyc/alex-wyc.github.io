@@ -4,8 +4,8 @@
 }
 
 @font-face {
-	font-family: "DayRoman";
-	src: url("/font/DAYROM.ttf") format("truetype");
+	font-family: "Unispace";
+	src: url("/font/unispace.ttf") format("truetype");
 }
 
 html, body {
@@ -13,7 +13,7 @@ html, body {
 	padding: 0;
 	background-image: url("../images/blueprint.jpg");
 	background-repeat: repeat-xy;
-	font-family: "DayRoman";
+	font-family: "Unispace";
 }
 
 h1, h2, h3, h4 {
