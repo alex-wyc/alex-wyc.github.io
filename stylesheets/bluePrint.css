@@ -32,7 +32,6 @@ div.sidebar {
 
 div.sidebar ul {
 	list-style-type: none;
-	vertical-align: middle;
 }
 
 div.sidebar li {
@@ -41,6 +40,8 @@ div.sidebar li {
 	background-color: LightSkyBlue;
 	border: 5px ridge ForestGreen;
 	margin: 5px;
+	vertical-align: middle;
+	text-align: center;
 }
 
 div.main {
