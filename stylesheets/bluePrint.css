@@ -5,3 +5,10 @@ body {
 h1, h2, h3, h4 {
 	text-align: center;
 }
+
+div.header {
+	background-color: #FFFFFF;
+	text-align: center;
+	color: blue;
+	height: 500px;
+}
