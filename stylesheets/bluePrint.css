@@ -9,6 +9,10 @@ h1, h2, h3, h4 {
 	text-align: center;
 }
 
+a {
+	transition: color 1s;
+}
+
 div.sidebar a:link {
 	color: blue;
 	text-decoration: none;
@@ -84,7 +88,7 @@ div.sidebar li {
 
 div.sidebar li:hover {
 	background-color: DeepSkyBlue;
-	transition: .5s;
+	transition: 1s;
 	border: 5px groove ForestGreen;
 	color: red;
 	text-decoration: underline;
