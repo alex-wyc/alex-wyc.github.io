@@ -3,16 +3,22 @@
 	src: url("/font/Fragmentcore.otf") format("opentype");
 }
 
+@font-face {
+	font-family: "DayRoman";
+	src: url("/font/DAYROM.ttf") format("truetype");
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
 	background-image: url("../images/blueprint.jpg");
 	background-repeat: repeat-xy;
-	font-family: "FragmentCore"
+	font-family: "DayRoman";
 }
 
 h1, h2, h3, h4 {
 	text-align: center;
+	font-family: "FragmentCore"
 }
 
 a {
