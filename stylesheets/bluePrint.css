@@ -1,14 +1,4 @@
 @font-face {
-	font-family: "FragmentCore";
-	src: url("/font/Fragmentcore.otf") format("opentype");
-}
-
-@font-face {
-	font-family: "Unispace";
-	src: url("/font/unispace.ttf") format("truetype");
-}
-
-@font-face {
 	font-family: "OldStandard";
 	src: url("/font/OldStandard") format("truetype");
 }
