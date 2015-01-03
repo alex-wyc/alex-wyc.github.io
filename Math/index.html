@@ -61,7 +61,20 @@
 
 				<p>Now we apply rearrangement to each "row" of the expansion. Notice hat each row is greater than
 				or equal to n, and since there are n rows, their sum is greater than or equal to \(n \times n\), or
-				\(\boxed{n^2}\blacksquare\)
+				\(\boxed{n^2}\blacksquare\)</p>
+				<br>
+				<br>
+				<p><b>Bonus Solution by Brandon Lin:</b><p>
+				<p>We create two vectors, \(\langle \sqrt{x_1}, \sqrt{x_2}, \sqrt{x_3}, ... , \sqrt{x_n} \rangle\) and
+				\(\langle \frac{1}{\sqrt{x_1}}, \frac{1}{\sqrt{x_2}}, \frac{1}{\sqrt{x_3}}, ... , \frac{1}{\sqrt{x_n}} \rangle\).<p>
+
+				<p>Now we apply the Cauchy-Schrawz inequality, we get the following:
+				\[
+				(x_1 + x_2 + x_3 + ... + x_n)(\frac{1}{x_1} + \frac{1}{x_2} + \frac{1}{x_3} + ... + \frac{1}{x_n}) \geq 
+				(\frac{1}{\sqrt{x_1}} \cdot \sqrt{x_1} + \frac{1}{\sqrt{x_2}} \cdot \sqrt{x_2} + \frac{1}{\sqrt{x_3}} \cdot \sqrt{x_3} + ... + \frac{1}{\sqrt{x_n}} \cdot \sqrt{x_n})^2
+				\]</p>
+
+				<p>The right hand side simplifies to \(\boxed{n^2}\blacksquare\)</p>
 			</div>
 
 			<div class="Hint" style="display:none">
