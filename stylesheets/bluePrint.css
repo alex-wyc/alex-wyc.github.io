@@ -8,12 +8,17 @@
 	src: url("/font/unispace.ttf") format("truetype");
 }
 
+@font-face {
+	font-family: "OldStandard";
+	src: url("/font/OldStandard") format("truetype");
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
 	background-image: url("../images/blueprint.jpg");
 	background-repeat: repeat-xy;
-	font-family: "Unispace";
+	font-family: "OldStandard";
 }
 
 h1, h2, h3, h4 {
