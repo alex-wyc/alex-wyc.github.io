@@ -41,6 +41,10 @@
 
 			<p>Problem from "Math Circle for Olympians" by Henryk Pawlowski</p>
 
+			<div class="Hint" style="display:none">
+				<p>Hint: Use Rearrangement</p>
+			</div>
+
 			<div class="Solution" style="display:none">
 				<p><b>Solution:</b></p>
 				<p>WLOG, we can assume that \(x_1 \geq x_2 \geq x_3 \geq ... \geq x_n\). Therefore, we also know that
@@ -67,7 +71,7 @@
 				<p>We create two vectors, \(\langle \sqrt{x_1}, \sqrt{x_2}, \sqrt{x_3}, ... , \sqrt{x_n} \rangle\) and
 				\(\langle \frac{1}{\sqrt{x_1}}, \frac{1}{\sqrt{x_2}}, \frac{1}{\sqrt{x_3}}, ... , \frac{1}{\sqrt{x_n}} \rangle\).<p>
 
-				<p>Now we apply the Cauchy-Shawarz inequality, we get the following:
+				<p>Now we apply the Cauchy-Schwarz inequality, we get the following:
 				\[
 				(x_1 + x_2 + x_3 + ... + x_n)(\frac{1}{x_1} + \frac{1}{x_2} + \frac{1}{x_3} + ... + \frac{1}{x_n}) \geq 
 				\]
@@ -76,10 +80,6 @@
 				\]</p>
 
 				<p>The right hand side simplifies to \(\boxed{n^2}\blacksquare\)</p>
-			</div>
-
-			<div class="Hint" style="display:none">
-				<p>Hint: Use Rearrangement</p>
 			</div>
 
 			<button title="Click to show/hide content" type="button" onclick="if(document.getElementsByClassName('Solution')[0].style.display=='none') {document.getElementsByClassName('Solution')[0].style.display=''}else{document.getElementsByClassName('Solution')[0].style.display='none'}">Show/hide Solution</button>
