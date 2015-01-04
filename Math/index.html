@@ -32,6 +32,23 @@
 			<h2>Problem of the Day</h2>
 			<p>The AMC is coming up, as a preperation effort, I'll post one problem per day!</p>
 
+			<h4>2015-01-04</h4>
+			<p><b>Number Theory Problem:</b> Find the least positive integer n such that any
+			set of n pairwise relatively prime integers greater than 1 and less than 2014 contains at least one prime number.</p>
+
+			<div class="Hint01041" style="display:none">
+				<p>Hint: I'll figure out something when I solve this problem.</p>
+			</div>
+
+			<div class="Solution01041" style="display:none">
+				<p><b>Solution:</b></p>
+				<p>No Solution Yet.</p>
+			</div>
+
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution01031').style.display=='none') {document.getElementById('Solution01031').style.display=''}else{document.getElementById('Solution01031').style.display='none'}">Show/hide Solution</button>
+
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Hint01031').style.display=='none') {document.getElementById('Hint01031').style.display=''}else{document.getElementById('Hint01031').style.display='none'}">Show/hide Hint</button>
+
 			<h4>2015-01-03</h4>
 			<p><b>Geometry Problem:</b> If \(a, b, c\) are the sides of the triangle \(ABC\), 
 			\(t_a, t_b, t_c\) are the length of the angle bisectors of angles \(A, B, C\) and \(T_a, T_b, T_c\) are
@@ -40,11 +57,11 @@
 			abc = \sqrt{T_a T_b T_c t_a t_b t_c}
 			\]</p>
 
-			<div class="Hint" style="display:none">
+			<div class="Hint01031" style="display:none">
 				<p>Hint: Prove \(ab = T_c t_c\).</p>
 			</div>
 
-			<div class="Solution" style="display:none">
+			<div class="Solution01031" style="display:none">
 				<p><b>Solution:</b></p>
 				<center><img src="/images/geo1.png" width=600px alt="Diagram"></center>
 				<p>The hint is an important one, if we can proove the hint, we can easily get
@@ -63,9 +80,9 @@
 				Now we square root both sides and we get \(\boxed{abc = \sqrt{T_a T_b T_c t_a t_b t_c}} \blacksquare\)</p>
 			</div>
 
-			<button title="Click to show/hide content" type="button" onclick="if(document.getElementsByClassName('Solution')[0].style.display=='none') {document.getElementsByClassName('Solution')[0].style.display=''}else{document.getElementsByClassName('Solution')[0].style.display='none'}">Show/hide Solution</button>
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution01031').style.display=='none') {document.getElementById('Solution01031').style.display=''}else{document.getElementById('Solution01031').style.display='none'}">Show/hide Solution</button>
 
-			<button title="Click to show/hide content" type="button" onclick="if(document.getElementsByClassName('Hint')[0].style.display=='none') {document.getElementsByClassName('Hint')[0].style.display=''}else{document.getElementsByClassName('Hint')[0].style.display='none'}">Show/hide Hint</button>
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Hint01031').style.display=='none') {document.getElementById('Hint01031').style.display=''}else{document.getElementById('Hint01031').style.display='none'}">Show/hide Hint</button>
 
 			<h4>2015-01-02</h4>
 			<p><b>Algebra Problem:</b> If \(x_1, x_2, x_3 ... x_n\) are positive, find with proof the minimum value of:
@@ -76,11 +93,11 @@
 
 			<p>Problem from "Math Circle for Olympians" by Henryk Pawlowski</p>
 
-			<div class="Hint" style="display:none">
+			<div class="Hint01021" style="display:none">
 				<p>Hint: Use Rearrangement</p>
 			</div>
 
-			<div class="Solution" style="display:none">
+			<div class="Solution01021" style="display:none">
 				<p><b>Solution:</b></p>
 				<p>WLOG, we can assume that \(x_1 \geq x_2 \geq x_3 \geq ... \geq x_n\). Therefore, we also know that
 				\(\frac{1}{x_n} \geq \frac{1}{x_{n-1}} \geq \frac{1}{x_{n-2}} \geq ... \geq \frac{1}{x_1}\).</p>
@@ -117,26 +134,26 @@
 				<p>The right hand side simplifies to \(\boxed{n^2}\blacksquare\)</p>
 			</div>
 
-			<button title="Click to show/hide content" type="button" onclick="if(document.getElementsByClassName('Solution')[1].style.display=='none') {document.getElementsByClassName('Solution')[1].style.display=''}else{document.getElementsByClassName('Solution')[1].style.display='none'}">Show/hide Solution</button>
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution01021').style.display=='none') {document.getElementById('Solution01021').style.display=''}else{document.getElementById('Solution01021').style.display='none'}">Show/hide Solution</button>
 
-			<button title="Click to show/hide content" type="button" onclick="if(document.getElementsByClassName('Hint')[1].style.display=='none') {document.getElementsByClassName('Hint')[1].style.display=''}else{document.getElementsByClassName('Hint')[1].style.display='none'}">Show/hide Hint</button>
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Hint01021').style.display=='none') {document.getElementById('Hint01021').style.display=''}else{document.getElementById('Hint01021').style.display='none'}">Show/hide Hint</button>
 
 			<p><b>Combo Problem:</b> Compute the following sum:
 			\[
 			\sum_{k=1}^{n} \binom{n}{k} k^3
 			\]
 
-			<div class="Hint" style="display:none">
+			<div id="Hint01022" style="display:none">
 				<p>Hint: Find an interpertation of the sum</p>
 			</div>
 
-			<div class="Solution" style="display:none">
+			<div id="Solution01022" style="display:none">
 				<p><b>Solution:</b></p> No Solution Yet.
 			</div>
 
-			<button title="Click to show/hide content" type="button" onclick="if(document.getElementsByClassName('Solution')[2].style.display=='none') {document.getElementsByClassName('Solution')[2].style.display=''}else{document.getElementsByClassName('Solution')[2].style.display='none'}">Show/hide Solution</button>
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution01022').style.display=='none') {document.getElementById('Solution01022').style.display=''}else{document.getElementById('Solution01022').style.display='none'}">Show/hide Solution</button>
 
-			<button title="Click to show/hide content" type="button" onclick="if(document.getElementsByClassName('Hint')[2].style.display=='none') {document.getElementsByClassName('Hint')[2].style.display=''}else{document.getElementsByClassName('Hint')[2].style.display='none'}">Show/hide Hint</button>
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Hint01022').style.display=='none') {document.getElementById('Hint01022').style.display=''}else{document.getElementById('Hint01022').style.display='none'}">Show/hide Hint</button>
 		</div>
 	</body>
 </html>
