@@ -137,7 +137,41 @@
 
 			<div id="Solution0127I7" style="display:none">
 				<p><b>Solution:</b></p>
+				<p>Similar to question 5, this just SCREAMS mass points</p>
 				<center><img src="/images/NYCMT0127I7.png" alt="Diagram" width=500px></center>
+				<p>We assign B a mass of 3 and A a mass of 4. That means the mass of M is 7. It also means that the mass of
+				C is \(\frac{8}{3}\).This means that the ratio \(CP : PM\) is \(7 : \frac{8}{3} = \boxed{21 : 8} \blacksquare\).</p>
 			</div>
 			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution0127I7').style.display=='none') {document.getElementById('Solution0127I7').style.display=''}else{document.getElementById('Solution0127I7').style.display='none'}">Show/hide Solution</button>
+
+			<p>8. \(P(x)\) is a monic polynomial which satisfies the identity: \[
+				(x - 6)\cdotP(x) = x\cdotP(x-1)
+			\]
+			Find \(P(-1)\).</p>
+
+			<div id="Solution0127I8" style="display:none">
+				<p><b>Solution:</b></p>
+				<p>First off, by trying numbers, we know that \(P(0) = P(5) = 0\)</p>
+				<p>If we change the location of some terms, we can tweak the identity into:
+				\[
+					\frac{P(x)}{P(x-1)} = \frac{x}{x-6}
+				\]</p>
+				
+				<p>We know two things that the identity is missing:
+				<ol>
+					<li>\((x-5)\) must be a factor of \(P(x)\)</li>
+					<li>Since \(x\) is a factor of \(P(x)\), \((x-1)\) is a factor of \(P(x-1)\)</li>
+				</ol>
+				</p>
+
+				<p>The rason for their lack of representation in the final identity is that some
+				other factors of \(P(x)\) must have killed them off along the way. Using this method
+				we can build P(x) and P(x-1), we get:
+				\[
+					\frac{P(x)}{P(x-1)} = \frac{(x)(x-5)(x-1)(x-2)(x-3)(x-4)}{(x-1)(x-2)(x-3)(x-4)(x-5)}
+				\]</p>
+
+				<p>Now we just plug -1 into P(x), and we get: \(P(-1) = (-1)(-2)(-3)(-4)(-5)(-6) = \boxed{720} \blacksquare\)</p>
+			</div>
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution0127I8').style.display=='none') {document.getElementById('Solution0127I8').style.display=''}else{document.getElementById('Solution0127I8').style.display='none'}">Show/hide Solution</button>
 
