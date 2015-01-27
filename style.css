@@ -95,6 +95,20 @@ width : auto;
 background : #1d6893 url(images/menu_right-ON.gif) no-repeat top right;
 height : 33px;
 } 
+
+#menunav ul ul {
+			position: absolute;
+			left: -17.5%;
+			top: 100%;
+			visibility: hidden;
+			opacity: 0;
+			z-index:0;
+}
+
+#menunav li:hover > ul {
+	visibility: visible;
+	opacity: 1;
+}
 			/*TOP NAVIGATION*/
 #content { 
 padding : 0 1em 0 1em;
