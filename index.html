@@ -1,35 +1,49 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Yeech's Personal Website</title>
-		
-		<link rel="stylesheet" type="text/css" href="/stylesheets/bluePrint.css">
-
-		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-		
-		<script type="text/javascript"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>hiWorld!</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript"
 		  src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-		</script>
+	</script>
 
-		<script>
-			$(function() {
-				$(".sidebar").load("/sidebar.html");
-			});
-		</script>
+	<script>
+		$(function() {
+			$("#masthead").load("/masterhead.html");
+			$("#menunav").load("/menunav.html");
+			$("#footer").load("/footer.html");
+		});
+	</script>
+</head>
 
-	</head>
-
-	<body>
-
-		<div class="header" id="header">
-			<marquee><h1>Welcome! This is Yicheng Wang's Personal Website</h1></marquee>
-		</div>
-
-		<div class="sidebar" id="sidebar">
-		</div>
-		
-		<div class="main">
+<body>
+<div id="wrap">
+  <div id="masthead">
+  </div>
+  <div id="menucontainer">
+    <div id="menunav">
+    </div>
+  </div>
+  <div id="container">
+    <div id="sidebar">
+      <h3>Pages</h3>
+      <div id="navcontainer">
+        <ul>
+		<li><a href="/index.html">Home</a></li>
+		<li><a href="/aboutMe.html">About Me</a></li>
+		<li><a href="/Physics/">Physics</a></li>
+		<li><a href="/Math/">Contest Math</a></li>
+		<li><a href="/CS/">CS</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="content">
+      <h3>hiWorld, Welcome to Yeech's Personal Website</h3>
 			<h2>Recent Activities</h2>
+			<h4>2015-01-27</h4>
+			<p>Complete overhaul and rebuilding and redisigning of this website. Thoroughly updated</p>
 			<h4>2015-01-17</h4>
 			<p>New York City Math Team Meet individual round results updated!</p>
 			<h4>2015-01-04</h4>
@@ -42,6 +56,9 @@
 			<p>Math Problem of the Day Posted!</p>
 			<h4>2015-01-01</h4>
 			<p>This site is created! This is where I'll channel my projects and thoughts.</p>
-		</div>
-	</body>
+    </div>
+  </div>
+  <div id="footer"></div>
+</div>
+</body>
 </html>

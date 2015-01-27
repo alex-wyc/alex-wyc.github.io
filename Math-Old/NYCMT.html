@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Contest Math Prep</title>
+		
+		<link rel="stylesheet" type="text/css" href="/stylesheets/bluePrint.css">
+		
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+		<script type="text/javascript"
+		  src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+	
+		<script>
+			$(function() {
+				$(".sidebar").load("/sidebar.html");
+			});
+		</script>
+	
+	</head>
+
+	<body>
+
+		<div class="header" id="header">
+			<marquee><h1>MATH IS #1</h1></marquee>
+		</div>
+
+		<div class="sidebar" id="sidebar">
+		</div>
+
+		<div class="main">
+			<h2>Meet on 2015-01-16</h2>
+			<h4>Individual Round</h4>
+			<p>1. If (319, b, 481) is a Pythagorean triple, with b &lt; 481, find b.</p>
+			<div id="Solution0127I1" style="display:none">
+				<p><b>Solution:</b></p>
+				<p>At first glance the numbers may look intimidating, but a little algebra makes
+				our lives much easier. By the Pythagorean theorem we get:
+				\[
+					319^2 + b^2 = 481^2
+				\]
+				\[
+					b^2 = 481^2 - 319^2 = (481 + 319)(481 - 319) = 8 \times 100 \times 2 \times 81
+				\]
+				\[
+					\boxed{b = 4 \times 10 \times 9 = 360} \blacksquare
+				\]</p>
+			</div>
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution0127I1').style.display=='none') {document.getElementById('Solution0127I1').style.display=''}else{document.getElementById('Solution0127I1').style.display='none'}">Show/hide Solution</button>
+
+			<p>2. The hypotenuse of a right triangle is 11 and its area is 21. Find its perimeter</p>
+			<div id="Solution0127I2" style="display:none">
+				<p><b>Solution:</b></p>
+				<p>Let the two legs of the rigth triangle have lengths \(a\) and \(b\) respectively, and let \(c = 11\). By the Pythagorean theorem we have:
+				\[
+					a^2 + b^2 = 11^2 = 121
+				\]</p>
+				<p>By the area formula of a triangle, we have:
+				\[
+					\frac{1}{2}ab = 21
+				\]
+				\[
+					\therefore 2ab = 84
+				\]</p>
+
+				<p>Add the two together:
+				\[
+					a^2 + 2ab + b^2 = (a + b)^2 = 121 + 84 = 205
+					a + b = \sqrt{205}
+				\]
+				\[
+					\therefore \boxed{a + b + c = 11 + \sqrt{205}}
+				\]</p>
+			</div>
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution0127I2').style.display=='none') {document.getElementById('Solution0127I2').style.display=''}else{document.getElementById('Solution0127I2').style.display='none'}">Show/hide Solution</button>
+
+			<p>3. On the coordinate plane: A(12, 20), B(57, 100), C(-30, -63). Find the coordinates of the intersection of the medians of \(\triangle\)ABC.
+			<div id="Solution0127I3" style="display:none">
+				<p><b>Solution:</b></p>
+				<p>The intersection of the medians is the centroid, or the center of mass of the triangle, its coordinates is therefore \((\bar{x}, \bar{y})\).</p>
+				<p>Therefore its x and y values are:
+				\[
+					x = \frac{12 + 57 - 30}{3} = 4 + 19 - 10 = 13
+				\]
+				\[
+					y = \frac{20 + 100 - 63}{3} = 40 - 21 = 19
+				\]
+				</p>
+
+				<p>Therefore the coordinates of the centroid is \(\boxed{(13, 19)} \blacksquare\)
+			</div>
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution0127I3').style.display=='none') {document.getElementById('Solution0127I3').style.display=''}else{document.getElementById('Solution0127I3').style.display='none'}">Show/hide Solution</button>
+
+			<p>4. A class with 11 girls and \(n\) boys visited a library. Eachchild checked out the same number of books.
+			Together they checked out \(n^2 + 9n - 2\) books from the library. How many boys are there in the class?</p>
+			<div id="Solution0127I4" style="display:none">
+				<p><b>Solution:</b></p>
+				<p>Let the number of books each person checked out be \(a\). So we know that
+				\[
+					a(11 + n) = n^2 + 9n - 2
+				\]</p>
+				<p>Divide by \(11 + n\), we get:
+				\[
+					a = \frac{n^2 + 9n - 2}{n + 11} = n - 2 + \frac{20}{n + 11}
+				\]</p>
+				<p>We know that a has to be an integer, that means \(n + 11\) must be a divisor of 20. That forces \(\boxed{n = 9} \blacksquare\)</p>
+			</div>
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution0127I4').style.display=='none') {document.getElementById('Solution0127I4').style.display=''}else{document.getElementById('Solution0127I4').style.display='none'}">Show/hide Solution</button>
+
+			<p>5. In \(\triangle ABC\), \(P\) is on \(\overline{AB}\), and \(AP:PB = 1:3\).
+			The line through \(P\) and the centroid of \(\triangle ABC\) divides \(\overline{BC}\) at point Q.
+			Find \(BQ:QC\)</p>
+
+			<div id="Solution0127I5" style="display:none">
+				<p><b>Solution:</b></p>
+				<p>Triangle, centroid, ratios, chevians? This problem screams MASS POINTS</p>
+				<center><img src="/images/NYCMT0127I5.png" alt="Diagram" width=500px></center>
+				<p>Refer to the above diagram, we assign mass 3 to point A. Since D is the midpoint of \(\overline{AC}\),
+				we also assign a mass of 3 to point C, that means we assign a mass 6 to point D. Since the centroid
+				divides the median in a 1:2 ratio, we assign a mass of 3 to point B. However, P divides \(\overline{AB}\)
+				into a 1:3 ratio, that means the split mass of B on this side is 1, so the split mass on the other side is 2.
+				Therefore, \(\boxed{BQ:QC = 3:2} \blacksquare\)
+			</div>
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution0127I5').style.display=='none') {document.getElementById('Solution0127I5').style.display=''}else{document.getElementById('Solution0127I5').style.display='none'}">Show/hide Solution</button>
+
+			<p>6. The angle bisectors of the acute angles of a 3-4-5 right triangle split the triangle into four regions.
+			Compute the area of the region that is a quadrilateral.</p>
+
+			<div id="Solution0127I6" style="display:none">
+				<p><b>Solution:</b></p>
+				<p><b>Solution credz goes to my friend Amendar W.</b></p>
+				<center><img src="/images/NYCMT0127I6.jpg" alt="Diagram" width=500px></center>
+				<p>Using the angle bisector theorem, we could easily find the lengths of the segments that the two cevians form.
+				From there, we would use mass points to determine the ratio in which the cevians divide each other.
+				For instance, using the mass points as vertices, 4-12:12-8 would be 3:2. This would make the areas C+D equal to \(\frac{1}{3}\)
+				the area of the whole triangle since they share the same base, or 2. Then, using the ratios of the bases,
+				we could solve for C (\(\frac{3}{4}\)). Using a similar approach, we would be able to find the area B (\(\frac{2}{3}\)).
+				What we want is the sum of these two areas, which turns out to be \(\boxed{\frac{17}{12}} \blacksquare\).</p>
+			</div>
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution0127I6').style.display=='none') {document.getElementById('Solution0127I6').style.display=''}else{document.getElementById('Solution0127I6').style.display='none'}">Show/hide Solution</button>
+
+			<p>7. In \(\triangle ABC\), \(M\) is on \(\overline{AB}\), \(AM : MB = 3 : 4\), \(N\) is on \(\overline{AC}\), \(AN : NC = 2 : 3\),
+			and \(\overline{BN}\) intersects \(\overline{CM}\) at \(P\). Compute \(CP : PM\).</p>
+
+			<div id="Solution0127I7" style="display:none">
+				<p><b>Solution:</b></p>
+				<p>Similar to question 5, this just SCREAMS mass points</p>
+				<center><img src="/images/NYCMT0127I7.png" alt="Diagram" width=500px></center>
+				<p>We assign B a mass of 3 and A a mass of 4. That means the mass of M is 7. It also means that the mass of
+				C is \(\frac{8}{3}\).This means that the ratio \(CP : PM\) is \(7 : \frac{8}{3} = \boxed{21 : 8} \blacksquare\).</p>
+			</div>
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution0127I7').style.display=='none') {document.getElementById('Solution0127I7').style.display=''}else{document.getElementById('Solution0127I7').style.display='none'}">Show/hide Solution</button>
+
+			<p>8. \(P(x)\) is a monic polynomial which satisfies the identity: \[
+				(x - 6)\cdot P(x) = x\cdot P(x-1)
+			\]
+			Find \(P(-1)\).</p>
+
+			<div id="Solution0127I8" style="display:none">
+				<p><b>Solution:</b></p>
+				<p>First off, by trying numbers, we know that \(P(0) = P(5) = 0\)</p>
+				<p>If we change the location of some terms, we can tweak the identity into:
+				\[
+					\frac{P(x)}{P(x-1)} = \frac{x}{x-6}
+				\]</p>
+				
+				<p>We know two things that the identity is missing:
+				<ol>
+					<li>\((x-5)\) must be a factor of \(P(x)\)</li>
+					<li>Since \(x\) is a factor of \(P(x)\), \((x-1)\) is a factor of \(P(x-1)\)</li>
+				</ol>
+				</p>
+
+				<p>The rason for their lack of representation in the final identity is that some
+				other factors of \(P(x)\) must have killed them off along the way. Using this method
+				we can build P(x) and P(x-1), we get:
+				\[
+					\frac{P(x)}{P(x-1)} = \frac{(x)(x-5)(x-1)(x-2)(x-3)(x-4)}{(x-6)(x-1)(x-2)(x-3)(x-4)(x-5)}
+				\]</p>
+
+				<p>Now we just plug -1 into P(x), and we get: \(P(-1) = (-1)(-2)(-3)(-4)(-5)(-6) = \boxed{720} \blacksquare\)</p>
+			</div>
+			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution0127I8').style.display=='none') {document.getElementById('Solution0127I8').style.display=''}else{document.getElementById('Solution0127I8').style.display='none'}">Show/hide Solution</button>
+
