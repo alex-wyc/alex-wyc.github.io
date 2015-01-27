@@ -1,194 +1,204 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Contest Math Prep</title>
-		
-		<link rel="stylesheet" type="text/css" href="/stylesheets/bluePrint.css">
-		
-		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-
-		<script type="text/javascript"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>hiWorld!</title>
+	<link href="./style.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript"
 		  src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-		</script>
-	
-		<script>
-			$(function() {
-				$(".sidebar").load("/sidebar.html");
-			});
-		</script>
-	
-	</head>
+	</script>
 
-	<body>
+	<script>
+		$(function() {
+			$("#masthead").load("/masterhead.html");
+			$("#menunav").load("/menunav.html");
+			$("#footer").load("/footer.html");
+		});
+	</script>
+</head>
 
-		<div class="header" id="header">
-			<marquee><h1>MATH IS #1</h1></marquee>
+<body>
+<div id="wrap">
+  <div id="masthead">
+  </div>
+  <div id="menucontainer">
+    <div id="menunav">
+    </div>
+  </div>
+  <div id="container">
+    <div id="sidebar">
+		<h3>Pages</h3>
+		<ul>
+			<li><a href="/Math/ProblemOfTheDay.html">Problem Of the Day</a></li>
+			<li><a href="/Math/NYCMT.html">NYC Math Team Meet Problem Solutions</a></li>
+		</ul>
+    </div>
+    <div id="content">
+		<h3>Problem of the Day</h3>
+		<p>The AMC is coming up, as a preperation effort, I'll post one problem per day!</p>
+
+		<h4>2015-01-05</h4>
+		<p><b>Random Easy Problem:</b> Prove DeMoivre's Theorem with induction.</p>
+
+		<p>If you didn't know (shame on you), DeMoivre's Theorem states the following: \[
+		(R cis(\theta))^n = R^n cis(\theta \times n)
+		\]</p>
+
+		<div id="Hint01051" style="display:none">
+			<p>Hint: ... Seriously? You can do this!</p>
 		</div>
 
-		<div class="sidebar" id="sidebar">
-		</div>
-		
-		<div class="main">
-			<h2>Problem of the Day</h2>
-			<p>The AMC is coming up, as a preperation effort, I'll post one problem per day!</p>
+		<div id="Solution01051" style="display:none">
+			<p><b>Solution:</b></p>
+			<p>Ok this should not be hard. Base case, \(n = 1\), kinda duh, just the original statement.</p>
+			
+			<p>Inductive hypothesis, DeMoivre's Theorem holds for the \(n = k\), where \(k\) is some integer.
+			So we get \((R cis(\theta))^k = R^k cis(\theta \times k)\).</p>
 
-			<h4>2015-01-05</h4>
-			<p><b>Random Easy Problem:</b> Prove DeMoivre's Theorem with induction.</p>
-
-			<p>If you didn't know (shame on you), DeMoivre's Theorem states the following: \[
-			(R cis(\theta))^n = R^n cis(\theta \times n)
-			\]</p>
-
-			<div id="Hint01051" style="display:none">
-				<p>Hint: ... Seriously? You can do this!</p>
-			</div>
-
-			<div id="Solution01051" style="display:none">
-				<p><b>Solution:</b></p>
-				<p>Ok this should not be hard. Base case, \(n = 1\), kinda duh, just the original statement.</p>
-				
-				<p>Inductive hypothesis, DeMoivre's Theorem holds for the \(n = k\), where \(k\) is some integer.
-				So we get \((R cis(\theta))^k = R^k cis(\theta \times k)\).</p>
-
-				<p>Now multiply both sides by \(R cis(\theta)\), we get \[
-				(R cis(\theta))^{k+1} = R^{k+1} (\cos{\theta \times k} + i \sin{\theta \times k})(\cos{\theta} + i \sin{\theta})
-				\]
-				Expand the right hand side, isolate the real and imaginary, we get that the left hand side equals:
-				\[
-				R^{k+1}[(\cos{\theta \times k} \cos{\theta} - \sin{\theta\times k}\sin{\theta}) + i (\sin{\theta \times k}\cos{\theta} + \cos{\theta \times k}\cos{\theta})]
-				\]
-				Now use the angle addition formula, we get the final result:
-				\[
-				\boxed{(R cis(\theta))^{k+1} = R^{k+1} cis(\theta \times (k+1))} \blacksquare
-				\]</p>
-			</div>
-
-			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution01051').style.display=='none') {document.getElementById('Solution01051').style.display=''}else{document.getElementById('Solution01051').style.display='none'}">Show/hide Solution</button>
-
-			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Hint01051').style.display=='none') {document.getElementById('Hint01051').style.display=''}else{document.getElementById('Hint01051').style.display='none'}">Show/hide Hint</button>
-
-			<h4>2015-01-04</h4>
-			<p><b>Number Theory Problem:</b> Find with proof the least positive integer n such that any
-			set of n pairwise relatively prime integers greater than 1 and less than 2015 contains at least one prime number.</p>
-
-			<div id="Hint01041" style="display:none">
-				<p>Hint: I'll figure out something when I solve this problem.</p>
-			</div>
-
-			<div id="Solution01041" style="display:none">
-				<p><b>Solution:</b></p>
-				<p>No Solution Yet.</p>
-			</div>
-
-			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution01041').style.display=='none') {document.getElementById('Solution01041').style.display=''}else{document.getElementById('Solution01041').style.display='none'}">Show/hide Solution</button>
-
-			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Hint01041').style.display=='none') {document.getElementById('Hint01041').style.display=''}else{document.getElementById('Hint01041').style.display='none'}">Show/hide Hint</button>
-
-			<h4>2015-01-03</h4>
-			<p><b>Geometry Problem:</b> If \(a, b, c\) are the sides of the triangle \(ABC\), 
-			\(t_a, t_b, t_c\) are the length of the angle bisectors of angles \(A, B, C\) and \(T_a, T_b, T_c\) are
-			length of the extensions of \(t_a, t_b, t_c\) to the intersection of the circumcircle. Prove that:
-			\[
-			abc = \sqrt{T_a T_b T_c t_a t_b t_c}
-			\]</p>
-
-			<div id="Hint01031" style="display:none">
-				<p>Hint: Prove \(ab = T_c t_c\).</p>
-			</div>
-
-			<div id="Solution01031" style="display:none">
-				<p><b>Solution:</b></p>
-				<center><img src="/images/geo1.png" width=600px alt="Diagram"></center>
-				<p>The hint is an important one, if we can proove the hint, we can easily get
-				\(a^2 b^2 c^2 = T_a t_a T_b t_b T_c t_c\) and then we simply square root both
-				sides. Therefore let's try to proove the hint.</p>
-				<p>Just a note, in the diagram and the following proof, I used \(P_x\) and \(Q_x\) to
-				denote the foot of the point of intersection and the foot of the angle bisector.</p>
-				<p>Refer to the diagram above, if we construct \(\overline{AP_c}\) and \(\overline{BP_c}\).
-				Now we have a cyclic quadrilateral. Since same arcs subtend same angles, we know that
-				\(\measuredangle ACP_c \cong \measuredangle ABP_c\), we also know that
-				\(\measuredangle CAB \cong \measuredangle CP_cB\).</p>
-				<p>By AA similarity, we know that \(\triangle BCP_c \sim \triangle Q_cAC\). Then
-				we get the following ratio: \(\frac{b}{T_c} = \frac{t_c}{a}\). Cross multiply and
-				we get \(ab = T_c t_c\).</p>
-				<p>Now repeat the process for all three angles and we'll get \(a^2 b^2 c^2 = T_a t_a T_b t_b T_c t_c\).
-				Now we square root both sides and we get \(\boxed{abc = \sqrt{T_a T_b T_c t_a t_b t_c}} \blacksquare\)</p>
-			</div>
-
-			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution01031').style.display=='none') {document.getElementById('Solution01031').style.display=''}else{document.getElementById('Solution01031').style.display='none'}">Show/hide Solution</button>
-
-			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Hint01031').style.display=='none') {document.getElementById('Hint01031').style.display=''}else{document.getElementById('Hint01031').style.display='none'}">Show/hide Hint</button>
-
-			<h4>2015-01-02</h4>
-			<p><b>Algebra Problem:</b> If \(x_1, x_2, x_3 ... x_n\) are positive, find with proof the minimum value of:
-			\[
-			(x_1 + x_2 + x_3 + ... + x_n)(\frac{1}{x_1} + \frac{1}{x_2} + \frac{1}{x_3} + ... + \frac{1}{x_n})
+			<p>Now multiply both sides by \(R cis(\theta)\), we get \[
+			(R cis(\theta))^{k+1} = R^{k+1} (\cos{\theta \times k} + i \sin{\theta \times k})(\cos{\theta} + i \sin{\theta})
 			\]
+			Expand the right hand side, isolate the real and imaginary, we get that the left hand side equals:
+			\[
+			R^{k+1}[(\cos{\theta \times k} \cos{\theta} - \sin{\theta\times k}\sin{\theta}) + i (\sin{\theta \times k}\cos{\theta} + \cos{\theta \times k}\cos{\theta})]
+			\]
+			Now use the angle addition formula, we get the final result:
+			\[
+			\boxed{(R cis(\theta))^{k+1} = R^{k+1} cis(\theta \times (k+1))} \blacksquare
+			\]</p>
+		</div>
+
+		<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution01051').style.display=='none') {document.getElementById('Solution01051').style.display=''}else{document.getElementById('Solution01051').style.display='none'}">Show/hide Solution</button>
+
+		<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Hint01051').style.display=='none') {document.getElementById('Hint01051').style.display=''}else{document.getElementById('Hint01051').style.display='none'}">Show/hide Hint</button>
+
+		<h4>2015-01-04</h4>
+		<p><b>Number Theory Problem:</b> Find with proof the least positive integer n such that any
+		set of n pairwise relatively prime integers greater than 1 and less than 2015 contains at least one prime number.</p>
+
+		<div id="Hint01041" style="display:none">
+			<p>Hint: I'll figure out something when I solve this problem.</p>
+		</div>
+
+		<div id="Solution01041" style="display:none">
+			<p><b>Solution:</b></p>
+			<p>No Solution Yet.</p>
+		</div>
+
+		<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution01041').style.display=='none') {document.getElementById('Solution01041').style.display=''}else{document.getElementById('Solution01041').style.display='none'}">Show/hide Solution</button>
+
+		<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Hint01041').style.display=='none') {document.getElementById('Hint01041').style.display=''}else{document.getElementById('Hint01041').style.display='none'}">Show/hide Hint</button>
+
+		<h4>2015-01-03</h4>
+		<p><b>Geometry Problem:</b> If \(a, b, c\) are the sides of the triangle \(ABC\), 
+		\(t_a, t_b, t_c\) are the length of the angle bisectors of angles \(A, B, C\) and \(T_a, T_b, T_c\) are
+		length of the extensions of \(t_a, t_b, t_c\) to the intersection of the circumcircle. Prove that:
+		\[
+		abc = \sqrt{T_a T_b T_c t_a t_b t_c}
+		\]</p>
+
+		<div id="Hint01031" style="display:none">
+			<p>Hint: Prove \(ab = T_c t_c\).</p>
+		</div>
+
+		<div id="Solution01031" style="display:none">
+			<p><b>Solution:</b></p>
+			<center><img src="/images/geo1.png" width=600px alt="Diagram"></center>
+			<p>The hint is an important one, if we can proove the hint, we can easily get
+			\(a^2 b^2 c^2 = T_a t_a T_b t_b T_c t_c\) and then we simply square root both
+			sides. Therefore let's try to proove the hint.</p>
+			<p>Just a note, in the diagram and the following proof, I used \(P_x\) and \(Q_x\) to
+			denote the foot of the point of intersection and the foot of the angle bisector.</p>
+			<p>Refer to the diagram above, if we construct \(\overline{AP_c}\) and \(\overline{BP_c}\).
+			Now we have a cyclic quadrilateral. Since same arcs subtend same angles, we know that
+			\(\measuredangle ACP_c \cong \measuredangle ABP_c\), we also know that
+			\(\measuredangle CAB \cong \measuredangle CP_cB\).</p>
+			<p>By AA similarity, we know that \(\triangle BCP_c \sim \triangle Q_cAC\). Then
+			we get the following ratio: \(\frac{b}{T_c} = \frac{t_c}{a}\). Cross multiply and
+			we get \(ab = T_c t_c\).</p>
+			<p>Now repeat the process for all three angles and we'll get \(a^2 b^2 c^2 = T_a t_a T_b t_b T_c t_c\).
+			Now we square root both sides and we get \(\boxed{abc = \sqrt{T_a T_b T_c t_a t_b t_c}} \blacksquare\)</p>
+		</div>
+
+		<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution01031').style.display=='none') {document.getElementById('Solution01031').style.display=''}else{document.getElementById('Solution01031').style.display='none'}">Show/hide Solution</button>
+
+		<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Hint01031').style.display=='none') {document.getElementById('Hint01031').style.display=''}else{document.getElementById('Hint01031').style.display='none'}">Show/hide Hint</button>
+
+		<h4>2015-01-02</h4>
+		<p><b>Algebra Problem:</b> If \(x_1, x_2, x_3 ... x_n\) are positive, find with proof the minimum value of:
+		\[
+		(x_1 + x_2 + x_3 + ... + x_n)(\frac{1}{x_1} + \frac{1}{x_2} + \frac{1}{x_3} + ... + \frac{1}{x_n})
+		\]
+		</p>
+
+		<p>Problem from "Math Circle for Olympians" by Henryk Pawlowski</p>
+
+		<div id="Hint01021" style="display:none">
+			<p>Hint: Use Rearrangement</p>
+		</div>
+
+		<div id="Solution01021" style="display:none">
+			<p><b>Solution:</b></p>
+			<p>WLOG, we can assume that \(x_1 \geq x_2 \geq x_3 \geq ... \geq x_n\). Therefore, we also know that
+			\(\frac{1}{x_n} \geq \frac{1}{x_{n-1}} \geq \frac{1}{x_{n-2}} \geq ... \geq \frac{1}{x_1}\).</p>
+
+			<p>From the rearrangement inequality, we know that the minimum value of any linear combination
+			of these two sequences is when the order of the two sequences completely mismatches. Therefore
+			the minimum value of any linear combination is \(\frac{1}{x_n} \cdot x_n + \frac{1}{x_{n-1}} \cdot x_{n-1} + \frac{1}{x_{n-2}} \cdot x_{n-2} + ...
+			+ \frac{1}{x_2} \cdot x_2 + \frac{1}{x_1} \cdot x_1\), which will give you n.</p>
+
+			<p>Now let's expand the left hand side:
+			\[x_1 \cdot \frac{1}{x_1} + x_2 \cdot \frac{1}{x_2} + ... + x_n \cdot \frac{1}{x_n} +\]
+			\[x_1 \cdot \frac{1}{x_2} + x_2 \cdot \frac{1}{x_3} + ... + x_n \cdot \frac{1}{x_1} +\]
+			\[... ... ... ... ... ... ... ... ... ... ... ...\]
+			\[x_1 \cdot \frac{1}{x_{n-1}} + x_2 \cdot \frac{1}{x_n} + ... + x_n \cdot \frac{1}{x_{n-2}} +\]
+			\[x_1 \cdot \frac{1}{x_n} + x_2 \cdot \frac{1}{x_1} + ... + x_n \cdot \frac{1}{x_{n-1}}\]
 			</p>
 
-			<p>Problem from "Math Circle for Olympians" by Henryk Pawlowski</p>
+			<p>Now we apply rearrangement to each "row" of the expansion. Notice hat each row is greater than
+			or equal to n, and since there are n rows, their sum is greater than or equal to \(n \times n\), or
+			\(\boxed{n^2}\blacksquare\)</p>
+			<br>
+			<p><b>Bonus Solution by Brandon Lin:</b><p>
+			<p>We create two vectors, \(\langle \sqrt{x_1}, \sqrt{x_2}, \sqrt{x_3}, ... , \sqrt{x_n} \rangle\) and
+			\(\langle \frac{1}{\sqrt{x_1}}, \frac{1}{\sqrt{x_2}}, \frac{1}{\sqrt{x_3}}, ... , \frac{1}{\sqrt{x_n}} \rangle\).<p>
 
-			<div id="Hint01021" style="display:none">
-				<p>Hint: Use Rearrangement</p>
-			</div>
-
-			<div id="Solution01021" style="display:none">
-				<p><b>Solution:</b></p>
-				<p>WLOG, we can assume that \(x_1 \geq x_2 \geq x_3 \geq ... \geq x_n\). Therefore, we also know that
-				\(\frac{1}{x_n} \geq \frac{1}{x_{n-1}} \geq \frac{1}{x_{n-2}} \geq ... \geq \frac{1}{x_1}\).</p>
-
-				<p>From the rearrangement inequality, we know that the minimum value of any linear combination
-				of these two sequences is when the order of the two sequences completely mismatches. Therefore
-				the minimum value of any linear combination is \(\frac{1}{x_n} \cdot x_n + \frac{1}{x_{n-1}} \cdot x_{n-1} + \frac{1}{x_{n-2}} \cdot x_{n-2} + ...
-				+ \frac{1}{x_2} \cdot x_2 + \frac{1}{x_1} \cdot x_1\), which will give you n.</p>
-
-				<p>Now let's expand the left hand side:
-				\[x_1 \cdot \frac{1}{x_1} + x_2 \cdot \frac{1}{x_2} + ... + x_n \cdot \frac{1}{x_n} +\]
-				\[x_1 \cdot \frac{1}{x_2} + x_2 \cdot \frac{1}{x_3} + ... + x_n \cdot \frac{1}{x_1} +\]
-				\[... ... ... ... ... ... ... ... ... ... ... ...\]
-				\[x_1 \cdot \frac{1}{x_{n-1}} + x_2 \cdot \frac{1}{x_n} + ... + x_n \cdot \frac{1}{x_{n-2}} +\]
-				\[x_1 \cdot \frac{1}{x_n} + x_2 \cdot \frac{1}{x_1} + ... + x_n \cdot \frac{1}{x_{n-1}}\]
-				</p>
-
-				<p>Now we apply rearrangement to each "row" of the expansion. Notice hat each row is greater than
-				or equal to n, and since there are n rows, their sum is greater than or equal to \(n \times n\), or
-				\(\boxed{n^2}\blacksquare\)</p>
-				<br>
-				<p><b>Bonus Solution by Brandon Lin:</b><p>
-				<p>We create two vectors, \(\langle \sqrt{x_1}, \sqrt{x_2}, \sqrt{x_3}, ... , \sqrt{x_n} \rangle\) and
-				\(\langle \frac{1}{\sqrt{x_1}}, \frac{1}{\sqrt{x_2}}, \frac{1}{\sqrt{x_3}}, ... , \frac{1}{\sqrt{x_n}} \rangle\).<p>
-
-				<p>Now we apply the Cauchy-Schwarz inequality, we get the following:
-				\[
-				(x_1 + x_2 + x_3 + ... + x_n)(\frac{1}{x_1} + \frac{1}{x_2} + \frac{1}{x_3} + ... + \frac{1}{x_n}) \geq 
-				\]
-				\[
-				(\frac{1}{\sqrt{x_1}} \cdot \sqrt{x_1} + \frac{1}{\sqrt{x_2}} \cdot \sqrt{x_2} + \frac{1}{\sqrt{x_3}} \cdot \sqrt{x_3} + ... + \frac{1}{\sqrt{x_n}} \cdot \sqrt{x_n})^2
-				\]</p>
-
-				<p>The right hand side simplifies to \(\boxed{n^2}\blacksquare\)</p>
-			</div>
-
-			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution01021').style.display=='none') {document.getElementById('Solution01021').style.display=''}else{document.getElementById('Solution01021').style.display='none'}">Show/hide Solution</button>
-
-			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Hint01021').style.display=='none') {document.getElementById('Hint01021').style.display=''}else{document.getElementById('Hint01021').style.display='none'}">Show/hide Hint</button>
-
-			<p><b>Combo Problem:</b> Compute the following sum:
+			<p>Now we apply the Cauchy-Schwarz inequality, we get the following:
 			\[
-			\sum_{k=1}^{n} \binom{n}{k} k^3
+			(x_1 + x_2 + x_3 + ... + x_n)(\frac{1}{x_1} + \frac{1}{x_2} + \frac{1}{x_3} + ... + \frac{1}{x_n}) \geq 
 			\]
+			\[
+			(\frac{1}{\sqrt{x_1}} \cdot \sqrt{x_1} + \frac{1}{\sqrt{x_2}} \cdot \sqrt{x_2} + \frac{1}{\sqrt{x_3}} \cdot \sqrt{x_3} + ... + \frac{1}{\sqrt{x_n}} \cdot \sqrt{x_n})^2
+			\]</p>
 
-			<div id="Hint01022" style="display:none">
-				<p>Hint: Find an interpertation of the sum</p>
-			</div>
-
-			<div id="Solution01022" style="display:none">
-				<p><b>Solution:</b></p> No Solution Yet.
-			</div>
-
-			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution01022').style.display=='none') {document.getElementById('Solution01022').style.display=''}else{document.getElementById('Solution01022').style.display='none'}">Show/hide Solution</button>
-
-			<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Hint01022').style.display=='none') {document.getElementById('Hint01022').style.display=''}else{document.getElementById('Hint01022').style.display='none'}">Show/hide Hint</button>
+			<p>The right hand side simplifies to \(\boxed{n^2}\blacksquare\)</p>
 		</div>
-	</body>
+
+		<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution01021').style.display=='none') {document.getElementById('Solution01021').style.display=''}else{document.getElementById('Solution01021').style.display='none'}">Show/hide Solution</button>
+
+		<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Hint01021').style.display=='none') {document.getElementById('Hint01021').style.display=''}else{document.getElementById('Hint01021').style.display='none'}">Show/hide Hint</button>
+
+		<p><b>Combo Problem:</b> Compute the following sum:
+		\[
+		\sum_{k=1}^{n} \binom{n}{k} k^3
+		\]
+
+		<div id="Hint01022" style="display:none">
+			<p>Hint: Find an interpertation of the sum</p>
+		</div>
+
+		<div id="Solution01022" style="display:none">
+			<p><b>Solution:</b></p> No Solution Yet.
+		</div>
+
+		<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Solution01022').style.display=='none') {document.getElementById('Solution01022').style.display=''}else{document.getElementById('Solution01022').style.display='none'}">Show/hide Solution</button>
+
+		<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('Hint01022').style.display=='none') {document.getElementById('Hint01022').style.display=''}else{document.getElementById('Hint01022').style.display='none'}">Show/hide Hint</button>
+
+	</div>
+  </div>
+  <div id="footer"></div>
+</div>
+</body>
 </html>
