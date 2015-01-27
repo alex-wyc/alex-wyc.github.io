@@ -1,47 +1,62 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>ERROR 404</title>
-		
-		<link rel="stylesheet" type="text/css" href="/stylesheets/bluePrint.css">
-
-		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-		
-		<script type="text/javascript"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>hiWorld!</title>
+	<link href="/style.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript"
 		  src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-		</script>
+	</script>
 
-		<script>
-			$(function() {
-				$(".sidebar").load("/sidebar.html");
-			});
-		</script>
+	<script>
+		$(function() {
+			$("#masthead").load("/masterhead.html");
+			$("#menunav").load("/menunav.html");
+			$("#footer").load("/footer.html");
+		});
+	</script>
+</head>
 
-	</head>
+<body>
+<div id="wrap">
+  <div id="masthead">
+  </div>
+  <div id="menucontainer">
+    <div id="menunav">
+    </div>
+  </div>
+  <div id="container">
+    <div id="sidebar">
+      <h3>Pages</h3>
+      <div id="navcontainer">
+        <ul>
+		<li><a href="/index.html">Home</a></li>
+		<li><a href="/aboutMe.html">About Me</a></li>
+		<li><a href="/Physics/">Physics</a></li>
+		<li><a href="/Math/">Contest Math</a></li>
+		<li><a href="/CS/">CS</a></li>
+        </ul>
+      </div>
 
-	<body>
+    </div>
+    <div id="content">
+		<h2>Fascinating, I can't find what you're looking for.</h2>
 
-		<div class="header" id="header">
-			<marquee><h1>Huh? I can't find where you're trying to go.</h1></marquee>
-		</div>
-
-		<div class="sidebar" id="sidebar">
-		</div>
+		<center><img src="/images/spock.jpg" alt="Spock finds your endavor fascinating."></center>
 		
-		<div class="main">
-			<h2>Fascinating, I can't find what you're looking for.</h2>
+		<p>Since I wrote this website, it is only logical that one
+		of the following happened:</p>
+		<ul>
+			<li>I didn't implement ths page yet. (Sorry) </li>
+			<li>You typed something wrong</li>
+		</ul>
 
-			<center><img src="/images/spock.jpg" alt="Spock finds your endavor fascinating."></center>
-			
-			<p>Since I wrote this website, it is only logical that one
-			of the following happened:</p>
-			<ul>
-				<li>I didn't implement ths page yet. (Sorry) </li>
-				<li>You typed something wrong</li>
-			</ul>
-
-			<p>So yeah, have fun with what you're doing and hope you find
-			where you want to go.</p>
-		</div>
-	</body>
+		<p>So yeah, have fun with what you're doing and hope you find
+		where you want to go.</p>
+	</div>
+  </div>
+  <div id="footer"></div>
+</div>
+</body>
 </html>
