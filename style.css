@@ -47,28 +47,38 @@ font-size : 12px;
 text-transform : uppercase;
 font-weight : bold;
 background : #fff url(images/menu_bg.gif) repeat-x bottom left;
-padding : 0 0 0 20px;
+padding : 0 20 20 20px;
 } 
+
 #menunav ul { 
 margin : 0;
 padding : 0;
 list-style-type : none;
 width : auto;
 float : left;
+-webkit-transition: .1s;
+transition: .3s;
+z-index:1;
 } 
-#menunav ul li { 
+
+#menunav ul li {
 display : block;
 float : left;
-padding : 0 1px;
-} 
+padding : 10 10px;
+margin: 0 10px;
+list-style: none;
+height: 32px;
+}
+
 #menunav ul li a { 
 display : block;
 float : left;
 color : #eaf3f8;
 text-decoration : none;
-padding : 0 0 0 20px;
-height : 33px;
+padding : 10 10px;
+list-style: none;
 } 
+
 #menunav ul li a span { 
 padding : 12px 20px 0 0;
 height : 21px;
@@ -98,11 +108,16 @@ height : 33px;
 
 #menunav ul ul {
 			position: absolute;
-			left: -17.5%;
 			top: 100%;
 			visibility: hidden;
 			opacity: 0;
 			z-index:0;
+}
+
+#menunav ul ul li {
+	float: left;
+	text-decoration: none;
+
 }
 
 #menunav li:hover > ul {
