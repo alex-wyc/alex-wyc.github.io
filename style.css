@@ -51,14 +51,14 @@ padding : 0 20 20 20px;
 } 
 
 #menunav ul { 
-margin : 0;
+margin : 0 5 0 0px;
 padding : 0;
 list-style-type : none;
 width : auto;
 float : left;
 -webkit-transition: .1s;
 transition: .3s;
-z-index:1;
+color : #eaf3f8;
 } 
 
 #menunav ul li {
@@ -68,6 +68,8 @@ padding : 10 10px;
 margin: 0 10px;
 list-style: none;
 height: 32px;
+-webkit-transition: .1s;
+transition: .3s;
 }
 
 #menunav ul li a { 
@@ -77,6 +79,8 @@ color : #eaf3f8;
 text-decoration : none;
 padding : 10 10px;
 list-style: none;
+transition: .3s;
+-webkit-transition: .1s;
 } 
 
 #menunav ul li a span { 
@@ -111,13 +115,13 @@ height : 33px;
 			top: 100%;
 			visibility: hidden;
 			opacity: 0;
-			z-index:0;
 }
 
 #menunav ul ul li {
 	float: left;
 	text-decoration: none;
-
+	transition: .3s;
+	-webkit-transition: .1s;
 }
 
 #menunav li:hover > ul {
