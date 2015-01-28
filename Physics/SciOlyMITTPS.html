@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>hiWorld!</title>
+	<link href="/style.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript"
+		  src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+	<script>
+		$(function() {
+			$("#masthead").load("/masterhead.html");
+			$("#menunav").load("/menunav.html");
+			$("#footer").load("/footer.html");
+		});
+	</script>
+</head>
+
+<body>
+<div id="wrap">
+  <div id="masthead">
+  </div>
+  <div id="menucontainer">
+    <div id="menunav">
+    </div>
+  </div>
+  <div id="container">
+    <div id="sidebar">
+		<h3>Pages</h3>
+		<ul>
+			<li>MIT Invitational
+			<ul>
+					<li><a href="/Physics/SciOlyMITCM.html">Compound Machines</a></li>
+					<li><a href="/Physics/SciOlyMITTPS.html">Technical Problem Solving</a></li>
+					<li><a href="/Physics/SciOlyMITIAT.html">It's About Time</a></li>
+				</ul>
+			</li>
+			<li><a href="/Math/USAPhO15.html">USAPhO</a></li>
+		</ul>
+    </div>
+    <div id="content">
+	<h3>Technical Problem Solving</h3>
+
+	<h4>General Comments</h4>
+	<p>This was a really easy/doable test, the best strategy here is to have one person do
+	the experiment and have the other guy work on the supplemental questions.</p>
+	<p>This page will only cover the supplemental questions as I have no idea how to use a TI-NSPIRE</p>
+
+	<h4>Station 1 - Thermodynamics</h4>
+	<p>1. What is Newton’s Law of Cooling? How does the experiment you ran in station 1
+	affected or modeled by this law? What are the differences between this law and your
+	best fit model, and	which more accurately models this rate of cooling? (10 points)<p>
+
+	<p><b>Answer:</b></p>
+	<p>Newton's Law of Cooling:</p>
+	\[
+		T(t) = T_a + (T_i - T_a)e^{-kt}
+	\]
+	<p>It states that there is a negative exponential relationship between the temperature
+	and time of an object under the influence of the surrounding.
+	In the experiment we just conducted,there was a change in temperature
+	within the water due to external influence, and therefore can be modelled using Newton's Law
+	of cooling, we can find K using the measurements and use it to predict future
+	changes in temperature. However, the law and the experiment are not completely the same
+	in that Newton's Law of Cooling assumes a static environment with no outside influence
+	except the difference in temperature, which is not the case here. However, in the long
+	run, Newton's Law of Cooling is still the preferred model in that the experimental measure (almost
+	linear) relies severely on the sample size, which is pretty small in this case.</p>
+
+	<p>2. What are the limitations to either Newton’s Law of Cooling or your model of best fit? Why is
+	extrapolation not always accurate, and what factors can affect the rate of cooling outside the model?
+	(9 points)</p>
+
+	<p><b>Answer:</b></p>
+	<h4>Station 2 - Kinematics</h4>
+	</div>
+  </div>
+  <div id="footer"></div>
+</div>
+</body>
+</html>
