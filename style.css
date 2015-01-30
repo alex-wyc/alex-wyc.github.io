@@ -32,6 +32,11 @@ li.collapsibleListClosed{
 	cursor: pointer;
 }
 
+li.treeEnd{
+	list-style-image:auto;
+	cursor:auto;
+}
+
 			/*WRAP*/
 #wrap { 
 width : 770px;
