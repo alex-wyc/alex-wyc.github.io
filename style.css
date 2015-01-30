@@ -1,3 +1,8 @@
+@font-face {
+	font-family: "Terminus";
+	src: url("/font/TerminusTTF") format("truetype");
+}
+
 html, body { 
 margin : 0;
 padding : 0;
@@ -6,7 +11,16 @@ body {
 font : 73% Arial, "Trebuchet MS", Helvetica, Tahoma, sans-serif;
 background : #ccc;
 color : #555;
-} 
+}
+
+/* CODE */
+.code {
+	background: #000;
+	color: #fff;
+	font-family: "Terminus";
+	padding: 10px;
+}
+
 			/*WRAP*/
 #wrap { 
 width : 770px;
