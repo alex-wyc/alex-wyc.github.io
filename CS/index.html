@@ -16,6 +16,9 @@
 			$("#footer").load("/footer.html");
 		});
 	</script>
+
+	<script type="text/javascript" src="/JS/CollapsibleLists.js"></script>
+
 </head>
 
 <body>
@@ -28,7 +31,25 @@
   </div>
   <div id="container">
     <div id="sidebar">
-<!-- Sidebar goes here -->
+		<h3>Pages</h3>
+		<ul class="collapsibleList">
+			<li>USACO
+				<ul>
+					<li class="treeEnd"><a href="/CS/USACO/14DECB.html">DEC 2014 Bronze</a></li>
+					<li class="treeEnd"><a href="/CS/USACO/15JANB.html">JAN 2015 Bronze</a></li>
+				</ul>
+			</li>
+			<li>CTF
+				<ul>
+					<li class="treeEnd"><a href="https://github.com/dannyqiu/easyctf-in-s-ane">EasyCTF-in/s/ane</a></li>
+					<li class="treeEnd"><a href="https://github.com/dannyqiu/adventctf-in-s-ane">AdventCTF-in/s/ane</a></li>
+				</ul>
+			</li>
+		</ul>
+		<script>
+			CollapsibleLists.apply();
+		</script>
+
     </div>
     <div id="content">
 		<h3>Computer Science</h3>
