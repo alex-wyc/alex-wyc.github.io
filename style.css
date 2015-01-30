@@ -21,6 +21,17 @@ color : #555;
 	padding: 10px;
 }
 
+/* Collapsable list */
+li.collapsibleListOpen{
+	list-style-image:url("/images/collapse.gif");
+	cursor: pointer;
+}
+
+li.collapsibleListClosed{
+	list-style-image:url("/images/expand.png");
+	cursor: pointer;
+}
+
 			/*WRAP*/
 #wrap { 
 width : 770px;
