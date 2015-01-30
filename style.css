@@ -33,7 +33,7 @@ li.collapsibleListClosed{
 }
 
 li.treeEnd{
-	list-style-image:auto;
+	list-style-image:url("/images/bullet-black1.png");
 	cursor:auto;
 }
 
