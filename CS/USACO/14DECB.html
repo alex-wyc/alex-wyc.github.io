@@ -130,7 +130,7 @@
 		did it with python, I'm sure one can do it with other languages as well.
 		Basically one loads the board into a 2D array and perform horizontal and vertical
 		check on each space</p>
-		<div class="code" id="S02" display="style:none">
+		<div class="code" id="S02" style="display:none">
 def checkClueHorizontal(x,y):
 <br>&nbsp;&nbsp;&nbsp;&nbsp;if (grid[y][x] == "." and x &lt; M - 2): # location is empty, exists two more stuff on the grid
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (x == 0 or grid[y][x - 1] == "#"): # to the left is either out of bounds or blocked
@@ -176,7 +176,7 @@ def checkClueHorizontal(x,y):
 		<p>This is a short and simple problem, basically the idea is that if we start at the
 		end of the list, and as soon as one cow is faster and behind another cow, they form a group,
 		simple list operation in python makes life easy.</p>
-		<div class="code" id="S03" display="style:none">
+		<div class="code" id="S03" style="display:none">
 f = open("cowjog.in", "r").read().split("\n");
 <br>
 <br>N = f[0];
