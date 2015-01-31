@@ -22,6 +22,12 @@ color : #555;
 }
 
 /* Collapsable list */
+
+ul.collapsibleList{
+	position: relative;
+	left: -15px;
+}
+
 li.collapsibleListOpen{
 	list-style-image:url("/images/collapse.gif");
 	cursor: pointer;
