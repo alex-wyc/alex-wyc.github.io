@@ -1,38 +1,22 @@
-def checkClueHorizontal(x,y):
-<br>&nbsp;&nbsp;&nbsp;&nbsp;if (grid[y][x] == "." and x &lt; M - 2): # location is empty, exists two more stuff on the grid
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (x == 0 or grid[y][x - 1] == "#"): # to the left is either out of bounds or blocked
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (grid[y][x + 1] == "." and grid[y][x + 2] == ".");
-<br>&nbsp;&nbsp;&nbsp;&nbsp;return False;
+f = open("cowjog.in", "r").read().split("\n");
 <br>
-<br>def checkClueVertical(x,y):
-<br>&nbsp;&nbsp;&nbsp;&nbsp;if (grid[y][x] == "." and y &lt; N - 2):
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (y == 0 or grid[y - 1][x] == "#"):
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (grid[y + 1][x] == "." and grid[y + 2][x] == ".");
+<br>N = f[0];
 <br>
-<br>f = open("crosswords.in","r").read().split("\n");
-<br>
-<br>N = int(f[0].split(" ")[0]);
-<br>M = int(f[0].split(" ")[1]);
-<br>
+<br>speed = [];
 <br>f = f[1:-1];
-<br>grid = [];
 <br>
-<br>for i in range(0, N):
-<br>&nbsp;&nbsp;&nbsp;&nbsp;grid.append(list(f[i]));
+<br>for element in f:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;speed.append(int(element[element.find(" ") + 1:]));
 <br>
-<br>clue = [];
-<br>out = "";
-<br>numClue = 0;
+<br>groupNum = 1;
 <br>
-<br>for y in range(0, N):
-<br>&nbsp;&nbsp;&nbsp;&nbsp;for x in range(0, M):
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (checkClueHorizontal(x, y) or checkClueVertical(x, y)):
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numClue += 1;
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out += str(y + 1) + " " + str(x + 1) + "\n";
+<br>for i in range(len(speed) - 1, 0, -1): # iteration from the end of list
+<br>&nbsp;&nbsp;&nbsp;&nbsp;if speed[i - 1] &gt; speed[i]:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;speed[i - 1] = speed[i];
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;speed.pop();
+<br>&nbsp;&nbsp;&nbsp;&nbsp;else:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groupNum += 1;
 <br>
-<br>output = open("crosswords.out", "w");
-<br>
-<br>finalOut = str(numClue) + "\n" + out;
-<br>
-<br>output.write(finalOut);
+<br>out = open("cowjog.out", "w");
+<br>out.write(str(groupNum));
 <br>
