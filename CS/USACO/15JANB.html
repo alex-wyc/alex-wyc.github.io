@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>hiWorld!</title>
+	<link href="/style.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript"
+		  src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+	<script>
+		$(function() {
+			$("#masthead").load("/masterhead.html");
+			$("#menunav").load("/menunav.html");
+			$("#footer").load("/footer.html");
+		});
+	</script>
+	<script type="text/javascript" src="/JS/CollapsibleLists.js"></script>
+    <script type="text/javascript">
+		runOnLoad(function(){ CollapsibleLists.apply(); });  
+    </script>
+</head>
+
+<body>
+<div id="wrap">
+  <div id="masthead">
+  </div>
+  <div id="menucontainer">
+    <div id="menunav">
+    </div>
+  </div>
+  <div id="container">
+    <div id="sidebar">
+		<h3>Pages</h3>
+		<ul class="collapsibleList">
+			<li>USACO
+				<ul>
+					<li class="treeEnd"><a href="/CS/USACO/14DECB.html">DEC 2014 Bronze</a></li>
+					<li class="treeEnd"><a href="/CS/USACO/15JANB.html">JAN 2015 Bronze</a></li>
+				</ul>
+			</li>
+			<li>CTF
+				<ul>
+					<li class="treeEnd"><a href="https://github.com/dannyqiu/easyctf-in-s-ane">EasyCTF-in/s/ane</a></li>
+					<li class="treeEnd"><a href="https://github.com/dannyqiu/adventctf-in-s-ane">AdventCTF-in/s/ane</a></li>
+				</ul>
+			</li>
+		</ul>
+		<script>
+			CollapsibleLists.apply();
+		</script>
+    </div>
+    <div id="content">
+		<h4>General Comments</h4>
+		<p>I made silver division this time around, it came as a genuine surprise.
+		When I took the contest, I thought that I would miss the cutoff again
+		by 30 pts. BUT GUESS WHAT?! The cutoff was a 600. Then again I could've gotten
+		1000, you'll see.</p>
+		<p>Oh yeah, I got really lazy during this contest and used python for everything :P</p>
+
+		<h4><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=507">Cow Routing</a></h4>
+		<p>Ok, this wasn't that hard, one simply check if any given route is viable, so yeah, wasn't
+		that hard, below is a python solution.</p>
+		<div class="code" id="S01" style="display:none">
+f = open("cowroute.in", "r").read().split("\n");
+<br>
+<br>line1 = f[0].split(" ");
+<br>
+<br>A = line1[0]
+<br>B = line1[1]
+<br>N = line1[2]
+<br>
+<br>def viableRoute(cities):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;city1HasAppeared = False;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;for i in range(0, len(cities)):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if cities[i] == A:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city1HasAppeared = True;
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if city1HasAppeared and cities[i] == B:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return True
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return False
+<br>
+<br>f = f[1:-1]
+<br>
+<br>planeBoard = []
+<br>
+<br>for i in range(0, len(f), 2):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;cost = int(f[i].split(" ")[0])
+<br>&nbsp;&nbsp;&nbsp;&nbsp;route = f[i+1].split(" ")
+<br>&nbsp;&nbsp;&nbsp;&nbsp;if viableRoute(route):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;planeBoard.append(cost);
+<br>
+<br>if planeBoard == []:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ans = -1
+<br>else:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ans = min(planeBoard);
+<br>
+<br>out = open("cowroute.out","w");
+<br>
+<br>out.write(str(ans) + "\n")
+<br>
+		</div>
+		<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('S01').style.display=='none') {document.getElementById('S01').style.display=''}else{document.getElementById('S01').style.display='none'}">Show/hide Solution</button>
+
+		<h4><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=508">Cow Routing II</a></h4>
+		<p>So this is a bit different from the last problem in that now
+		you have to check for viable combinations of any two routes. Still easy,
+		here's a somewhat inefficient python solution</p>
+		<div class="code" id="S02" style="display:none">
+f = open("cowroute.in", "r").read().split("\n");
+<br>
+<br>line1 = f[0].split(" ");
+<br>
+<br>A = line1[0]
+<br>B = line1[1]
+<br>N = line1[2]
+<br>
+<br>def viableRoute(cities):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;try:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return B in cities[cities.index(A):]
+<br>&nbsp;&nbsp;&nbsp;&nbsp;except Exception:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False
+<br>
+<br>def viableConglomerate(route1, route2):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;try:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in range(route1.index(A), len(route1)):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if route1[i] in route2:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if B in route2[route2.index(route1[i]):]:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return True
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False
+<br>&nbsp;&nbsp;&nbsp;&nbsp;except Exception:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False
+<br>
+<br>f = f[1:-1]
+<br>
+<br>planeBoard = []
+<br>totalC = []
+<br>
+<br>for i in range(0, len(f), 2):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;cost = int(f[i].split(" ")[0])
+<br>&nbsp;&nbsp;&nbsp;&nbsp;route = f[i+1].split(" ")
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;if A in route or B in route:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if viableRoute(route):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;totalC.append(cost)
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;planeBoard.append([cost, route])
+<br>
+<br>for i in range(0, len(planeBoard) - 1):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;for a in range(i+1, len(planeBoard)):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if A in planeBoard[a][1] + planeBoard[i][1]:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if viableConglomerate(planeBoard[i][1], planeBoard[a][1]) or viableConglomerate(planeBoard[a][1], planeBoard[i][1]):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;totalC.append(planeBoard[i][0] + planeBoard[a][0])
+<br>
+<br>if totalC == []:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ans = -1
+<br>else:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ans = min(totalC)
+<br>
+<br>out = open("cowroute.out", "w")
+<br>out.write(str(ans) + "\n")
+<br>
+		</div>
+		<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('S02').style.display=='none') {document.getElementById('S02').style.display=''}else{document.getElementById('S02').style.display='none'}">Show/hide Solution</button>
+
+		<h4><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=509">It's All About the Base</a></h4>
+		<p>I am not happy about this... Some person, *cough*
+		<a href="http://elc1798.github.io/">this guy</a>*cough* told me
+		bashing won't work... Turns out it does... Below is a C++ solution I came up with after
+		the contest ended.</p>
+
+		<h4><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=510">Meeting Time</a></h4>
+		<p>This was a fun binary tree, it's pretty simple, and here's a python solution.</p>
+		<div class="code" id="S04" style="display:none">
+f = open("meeting.in", "r").read().split("\n")[:-1]
+<br>
+<br>N = int(f[0].split(" ")[0])
+<br>
+<br>f = f[1:]
+<br>
+<br>for i in range(0, len(f)):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;f[i] = f[i].split(" ")
+<br>&nbsp;&nbsp;&nbsp;&nbsp;f[i][0] = int(f[i][0]) - 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;f[i][1] = int(f[i][1]) - 1
+<br>&nbsp;&nbsp;&nbsp;&nbsp;f[i][2] = int(f[i][2])
+<br>&nbsp;&nbsp;&nbsp;&nbsp;f[i][3] = int(f[i][3])
+<br>
+<br>f.sort()
+<br>
+<br>timeTable = []
+<br>
+<br>for i in range(0, N):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;timeTable.append([[],[]]); # bestieTime, elsieTime
+<br>
+<br># parse the actual data into the datatable
+<br>
+<br>for i in range(0, len(f)):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;if f[i][0] == 0:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeTable[f[i][1]][0].append(f[i][2])
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeTable[f[i][1]][1].append(f[i][3])
+<br>&nbsp;&nbsp;&nbsp;&nbsp;else:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if timeTable[f[i][0]] != [[],[]]:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for a in range(0, len(timeTable[f[i][0]][0])):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeTable[f[i][1]][0].append(timeTable[f[i][0]][0][a] + f[i][2])
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeTable[f[i][1]][1].append(timeTable[f[i][0]][1][a] + f[i][3])
+<br>
+<br>bestieTime = timeTable[-1][0]
+<br>bestieTime.sort();
+<br>elsieTime = timeTable[-1][1]
+<br>
+<br>ans = "IMPOSSIBLE\n";
+<br>
+<br>for i in range(0, len(bestieTime)):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;if bestieTime[i] in elsieTime:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ans = str(bestieTime[i]) + "\n"
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;
+<br>
+<br>out = open("meeting.out", "w").write(ans)
+<br>
+		</div>
+		<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('S04').style.display=='none') {document.getElementById('S04').style.display=''}else{document.getElementById('S04').style.display='none'}">Show/hide Solution</button>
+
+	</div>
+  </div>
+  <div id="footer"></div>
+</div>
+</body>
+</html>

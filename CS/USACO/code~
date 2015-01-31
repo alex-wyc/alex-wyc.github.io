@@ -1,0 +1,53 @@
+f = open("cowroute.in", "r").read().split("\n");
+<br>
+<br>line1 = f[0].split(" ");
+<br>
+<br>A = line1[0]
+<br>B = line1[1]
+<br>N = line1[2]
+<br>
+<br>def viableRoute(cities):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;try:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return B in cities[cities.index(A):]
+<br>&nbsp;&nbsp;&nbsp;&nbsp;except Exception:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False
+<br>
+<br>def viableConglomerate(route1, route2):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;try:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in range(route1.index(A), len(route1)):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if route1[i] in route2:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if B in route2[route2.index(route1[i]):]:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return True
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False
+<br>&nbsp;&nbsp;&nbsp;&nbsp;except Exception:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False
+<br>
+<br>f = f[1:-1]
+<br>
+<br>planeBoard = []
+<br>totalC = []
+<br>
+<br>for i in range(0, len(f), 2):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;cost = int(f[i].split(" ")[0])
+<br>&nbsp;&nbsp;&nbsp;&nbsp;route = f[i+1].split(" ")
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;if A in route or B in route:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if viableRoute(route):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;totalC.append(cost)
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;planeBoard.append([cost, route])
+<br>
+<br>for i in range(0, len(planeBoard) - 1):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;for a in range(i+1, len(planeBoard)):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if A in planeBoard[a][1] + planeBoard[i][1]:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if viableConglomerate(planeBoard[i][1], planeBoard[a][1]) or viableConglomerate(planeBoard[a][1], planeBoard[i][1]):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;totalC.append(planeBoard[i][0] + planeBoard[a][0])
+<br>
+<br>if totalC == []:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ans = -1
+<br>else:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;ans = min(totalC)
+<br>
+<br>out = open("cowroute.out", "w")
+<br>out.write(str(ans) + "\n")
+<br>
