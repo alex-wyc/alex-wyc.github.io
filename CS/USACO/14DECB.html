@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>hiWorld!</title>
+	<link href="/style.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript"
+		  src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+	<script>
+		$(function() {
+			$("#masthead").load("/masterhead.html");
+			$("#menunav").load("/menunav.html");
+			$("#footer").load("/footer.html");
+		});
+	</script>
+	<script type="text/javascript" src="/JS/CollapsibleLists.js"></script>
+    <script type="text/javascript">
+		runOnLoad(function(){ CollapsibleLists.apply(); });  
+    </script>
+</head>
+
+<body>
+<div id="wrap">
+  <div id="masthead">
+  </div>
+  <div id="menucontainer">
+    <div id="menunav">
+    </div>
+  </div>
+  <div id="container">
+    <div id="sidebar">
+		<h3>Pages</h3>
+		<ul class="collapsibleList">
+			<li>USACO
+				<ul>
+					<li class="treeEnd"><a href="/CS/USACO/14DECB.html">DEC 2014 Bronze</a></li>
+					<li class="treeEnd"><a href="/CS/USACO/15JANB.html">JAN 2015 Bronze</a></li>
+				</ul>
+			</li>
+			<li>CTF
+				<ul>
+					<li class="treeEnd"><a href="https://github.com/dannyqiu/easyctf-in-s-ane">EasyCTF-in/s/ane</a></li>
+					<li class="treeEnd"><a href="https://github.com/dannyqiu/adventctf-in-s-ane">AdventCTF-in/s/ane</a></li>
+				</ul>
+			</li>
+		</ul>
+		<script>
+			CollapsibleLists.apply();
+		</script>
+
+
+    </div>
+    <div id="content">
+		<h4>General Comments</h4>
+		<p>This was my first ever USACO contest and I missed the cutoff by 31 points.
+		I got 3 questions correct and missed border cases on the 4th one, so I only
+		got 1 test case correct. However, it was good practice, and in a lot of ways
+		what pushed me into silver the next competition.</p>
+		<h4><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=487">Marathon</a></h4>
+		<p>I did this problem with complimentary counting. One record all possible
+		skipped distances, and find the largest distance skipped and substract
+		that from the total distance.</p>
+		<p class="code">
+		#include <fstream>
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+int N, counter;
+
+int dist(int x1, int x2, int y1, int y2) {
+	return abs(x1 - x2) + abs(y1 - y2);
+}
+
+int distSkipped(int x1, int y1,
+				int x2, int y2,
+				int x3, int y3) {
+
+	//printf("%d, %d, %d, %d, %d, %d\n", x1, y1, x2, y2, x3, y3);
+	return dist(x1, x2, y1, y2) + dist(x2, x3, y2, y3) - dist(x1, x3, y1, y3);
+}
+
+int main() {
+
+	ifstream fin("marathon.in");
+	fin >> N;
+
+	int CheckPts[N][2];
+
+	for (counter = 0 ; counter < N ; counter++) {
+		fin >> CheckPts[counter][0] >> CheckPts[counter][1];
+	}
+
+	fin.close();
+
+	int totalDist = 0;
+
+	for (counter = 0 ; counter < N - 1 ; counter++) {
+		totalDist = totalDist + dist(CheckPts[counter][0], CheckPts[counter + 1][0], CheckPts[counter][1], CheckPts[counter + 1][1]);
+	}
+
+	//printf("%d\n", totalDist);
+
+	int maxSkipped = distSkipped(CheckPts[0][0], CheckPts[0][1], CheckPts[1][0], CheckPts[1][1], CheckPts[2][0], CheckPts[2][1]);
+	int distNow;
+
+	//printf("%d\n", maxSkipped);
+
+	for (counter = 2 ; counter < N - 2 ; counter++) {
+		distNow = distSkipped(CheckPts[counter - 1][0], CheckPts[counter - 1][1], CheckPts[counter][0], CheckPts[counter][1], CheckPts[counter + 1][0], CheckPts[counter + 1][1]);
+
+		if (distNow > maxSkipped) {
+			maxSkipped = distNow;
+		}
+
+		//printf("%d\n", maxSkipped);
+	}
+
+	int minDist = totalDist - maxSkipped;
+
+	ofstream fout("marathon.out");
+	fout << minDist << "\n";
+	fout.close();
+
+	return 0;
+}</p>
+	</div>
+  </div>
+  <div id="footer"></div>
+</div>
+</body>
+</html>
