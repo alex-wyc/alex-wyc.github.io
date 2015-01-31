@@ -1,64 +1,38 @@
-#include &lt;fstream&gt;
-<br>#include &lt;iostream&gt;
-<br>#include &lt;cstdlib&gt;
-<br>using namespace std;
+def checkClueHorizontal(x,y):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;if (grid[y][x] == "." and x &lt; M - 2): # location is empty, exists two more stuff on the grid
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (x == 0 or grid[y][x - 1] == "#"): # to the left is either out of bounds or blocked
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (grid[y][x + 1] == "." and grid[y][x + 2] == ".");
+<br>&nbsp;&nbsp;&nbsp;&nbsp;return False;
 <br>
-<br>int N, counter;
+<br>def checkClueVertical(x,y):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;if (grid[y][x] == "." and y &lt; N - 2):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (y == 0 or grid[y - 1][x] == "#"):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (grid[y + 1][x] == "." and grid[y + 2][x] == ".");
 <br>
-<br>int dist(int x1, int x2, int y1, int y2) {
-<br>&nbsp;&nbsp;&nbsp;&nbsp;return abs(x1 - x2) + abs(y1 - y2);
-<br>}
+<br>f = open("crosswords.in","r").read().split("\n");
 <br>
-<br>int distSkipped(int x1, int y1,
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int x2, int y2,
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int x3, int y3) {
+<br>N = int(f[0].split(" ")[0]);
+<br>M = int(f[0].split(" ")[1]);
 <br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;//printf("%d, %d, %d, %d, %d, %d\n", x1, y1, x2, y2, x3, y3);
-<br>&nbsp;&nbsp;&nbsp;&nbsp;return dist(x1, x2, y1, y2) + dist(x2, x3, y2, y3) - dist(x1, x3, y1, y3);
-<br>}
+<br>f = f[1:-1];
+<br>grid = [];
 <br>
-<br>int main() {
+<br>for i in range(0, N):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;grid.append(list(f[i]));
 <br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;ifstream fin("marathon.in");
-<br>&nbsp;&nbsp;&nbsp;&nbsp;fin &gt;&gt; N;
+<br>clue = [];
+<br>out = "";
+<br>numClue = 0;
 <br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;int CheckPts[N][2];
+<br>for y in range(0, N):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;for x in range(0, M):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (checkClueHorizontal(x, y) or checkClueVertical(x, y)):
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numClue += 1;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out += str(y + 1) + " " + str(x + 1) + "\n";
 <br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;for (counter = 0 ; counter &lt; N ; counter++) {
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fin &gt;&gt; CheckPts[counter][0] &gt;&gt; CheckPts[counter][1];
-<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>output = open("crosswords.out", "w");
 <br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;fin.close();
+<br>finalOut = str(numClue) + "\n" + out;
 <br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;int totalDist = 0;
-<br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;for (counter = 0 ; counter &lt; N - 1 ; counter++) {
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;totalDist = totalDist + dist(CheckPts[counter][0], CheckPts[counter + 1][0], CheckPts[counter][1], CheckPts[counter + 1][1]);
-<br>&nbsp;&nbsp;&nbsp;&nbsp;}
-<br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;//printf("%d\n", totalDist);
-<br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;int maxSkipped = distSkipped(CheckPts[0][0], CheckPts[0][1], CheckPts[1][0], CheckPts[1][1], CheckPts[2][0], CheckPts[2][1]);
-<br>&nbsp;&nbsp;&nbsp;&nbsp;int distNow;
-<br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;//printf("%d\n", maxSkipped);
-<br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;for (counter = 2 ; counter &lt; N - 2 ; counter++) {
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;distNow = distSkipped(CheckPts[counter - 1][0], CheckPts[counter - 1][1], CheckPts[counter][0], CheckPts[counter][1], CheckPts[counter + 1][0], CheckPts[counter + 1][1]);
-<br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (distNow &gt; maxSkipped) {
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxSkipped = distNow;
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-<br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//printf("%d\n", maxSkipped);
-<br>&nbsp;&nbsp;&nbsp;&nbsp;}
-<br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;int minDist = totalDist - maxSkipped;
-<br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;ofstream fout("marathon.out");
-<br>&nbsp;&nbsp;&nbsp;&nbsp;fout &lt;&lt; minDist &lt;&lt; "\n";
-<br>&nbsp;&nbsp;&nbsp;&nbsp;fout.close();
-<br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;return 0;
-<br>}
+<br>output.write(finalOut);
 <br>
